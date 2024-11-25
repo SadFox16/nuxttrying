@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   alias:{
-    '@': resolve(__dirname, '/'), //автоподстановка root url
+    // '@': resolve(__dirname, '/'), //автоподстановка root url
+    assets: "/<rootDir>/assets"
   },
   css:[ '~/assets/main.scss'], //root css
   postcss: { //tailwindcss настройки
