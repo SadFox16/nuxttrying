@@ -40,6 +40,16 @@
         </button>
     </div>
     <Counter id="counter"/>
+    <div>
+        <!-- get all data  -->
+        <p>Data: {{ data }}</p>
+        <!-- get value of worker from data  -->
+        <p>Worker {{ worker?.worker }}</p>
+        <!-- get name of student(watch transform for useFetch in script) -->
+        <p>Student: {{ student }}</p>
+        <!-- get buildings -->
+         <p>Buildings {{ pending ? 'Loading' : buildings }}</p>
+    </div>
   </div>
 </template>
 
@@ -47,4 +57,21 @@
     const counter = useCounter()
     const respone = await $fetch('/api/hello')
     console.log('Response from api/hello', respone)
+
+    //using useFetch for fetching server/api/hello
+    const { data: worker } = await useFetch('/api/hello')
+    const { data } = await useFetch('/api/hello')
+    console.log('data from useFetch from api/hello: ', worker)
+    console.log('data from useFetch from api/hello (toRaw): ', toRaw(data))
+    console.log('data.value from useFetch from api/hello: ', data.value)
+    console.log('data.value from useFetch from api/hello (toRaw): ', toRaw(data.value))
+
+    const { data: student } = await useFetch('/api/goodbye', {
+        transform: (_student) => _student.student.name //marks which data we need to get and save to use or display
+    })
+
+    const { data: buildings, pending } = await useLazyFetch('/api/buildings', {
+        // transform: (_buildings) => _buildings //marks which data we need to get and save to use or display
+        server: false
+    })
 </script>

@@ -19,6 +19,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  // ssr: false,
   // build: {
   //   transpile: ['pinia-plugin-persistedstate'],
   // },
@@ -27,6 +28,5 @@ export default defineNuxtConfig({
   // modules: ['@nuxtjs/tailwindcss']
   // ssr: true,
   // routeRules: {
-
   // }
 })
