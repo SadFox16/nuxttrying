@@ -19,6 +19,9 @@
     // sayHello()
     const { sayHello } = useUtils() //from composables
     const { $sayHello } = useNuxtApp() //from plugins
+    definePageMeta({
+        middleware: 'auth'
+    }) //local middleware
     sayHello() //from composables
     console.log('useNuxtApp: ', useNuxtApp()) //from plugins
     $sayHello('John') //from plugins
