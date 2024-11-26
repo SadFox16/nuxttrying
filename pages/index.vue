@@ -5,6 +5,7 @@
         <!-- <Profile/> -->
         Main page(pages)
         <IconsBell/>
+        <ContentDoc/>
         <!-- <img src="../assets/1.webp" alt="image1"/>
         <img src="../assets/2.jpg" alt="image2"/>
         <img src="@/assets/1.webp" alt="image1"/>
