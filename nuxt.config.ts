@@ -19,8 +19,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-
-  // modules: ['@nuxt/content', '@pinia/nuxt']
+  // build: {
+  //   transpile: ['pinia-plugin-persistedstate'],
+  // },
+  // modules: ['@nuxt/content', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt']
   modules: ['@nuxt/content']
   // modules: ['@nuxtjs/tailwindcss']
 })
