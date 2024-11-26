@@ -49,6 +49,9 @@
         <p>Student: {{ student }}</p>
         <!-- get buildings -->
          <p>Buildings {{ pending ? 'Loading' : buildings }}</p>
+        <!-- get productCount -->
+        <p> {{ pending2 ? 'Loading' : productCount }}</p>
+        <button @click="refresh">Refresh</button>
     </div>
   </div>
 </template>
@@ -74,4 +77,8 @@
         // transform: (_buildings) => _buildings //marks which data we need to get and save to use or display
         server: false
     })
+
+    const { data: productCount, pending2 } = await useAsyncData('products', () => $fetch('/api/products')) //using if we don't have async data
+    // const { data: productCount, pending2 } = await useLazyAsyncData('products', () => $fetch('/api/products')) //using if we have async data
+    const refresh = () => refreshNuxtData('products')
 </script>
