@@ -23,6 +23,10 @@ export default defineNuxtConfig({
   //   transpile: ['pinia-plugin-persistedstate'],
   // },
   // modules: ['@nuxt/content', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt']
-  modules: ['@nuxt/content']
+  modules: ['@nuxt/content'],
   // modules: ['@nuxtjs/tailwindcss']
+  // ssr: true,
+  // routeRules: {
+
+  // }
 })
