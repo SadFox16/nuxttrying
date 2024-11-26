@@ -44,5 +44,7 @@
 </template>
 
 <script setup lang="ts">
-const counter = useCounter()
+    const counter = useCounter()
+    const respone = await $fetch('/api/hello')
+    console.log('Response from api/hello', respone)
 </script>
