@@ -14,9 +14,12 @@
     </div>
 </template>
 
-<script>
+<script setup>
     // const sayHello = () => console.log('Hello')
     // sayHello()
-    const { sayHello } = useUtils()
-    sayHello()
+    const { sayHello } = useUtils() //from composables
+    const { $sayHello } = useNuxtApp() //from plugins
+    sayHello() //from composables
+    console.log('useNuxtApp: ', useNuxtApp()) //from plugins
+    $sayHello('John') //from plugins
 </script>
