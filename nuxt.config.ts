@@ -4,6 +4,9 @@ import { resolve } from 'path'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  // hooks: {
+  //   ready: (ctx) => console.log('context of the hook (ready)', ctx) //log to terminal console context of the hook 'ready'
+  // },
   // app: {
   //   //adding info to <head> for all pages
   //   head:{
