@@ -81,4 +81,16 @@
     const { data: productCount, pending2 } = await useAsyncData('products', () => $fetch('/api/products')) //using if we don't have async data
     // const { data: productCount, pending2 } = await useLazyAsyncData('products', () => $fetch('/api/products')) //using if we have async data
     const refresh = () => refreshNuxtData('products')
+
+    //SEO for this page of app
+    useHead({
+        title: 'This is from useHead for this page',
+        meta: [
+            { name: 'description', content: 'useHead meta' }
+        ],
+        bodyAttrs: {
+            class: 'main'
+        },
+        script: [ { innerHTML: 'console.log(\'useHead from index.vue\')' } ]
+    })
 </script>

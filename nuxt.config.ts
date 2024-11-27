@@ -4,6 +4,18 @@ import { resolve } from 'path'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  // app: {
+  //   //adding info to <head> for all pages
+  //   head:{
+  //     title: 'This is head from config',
+  //     meta: [
+  //       { 
+  //         name: 'description',
+  //         content: 'This is learning project to learn Nuxt 3'
+  //       }
+  //     ]
+  //   }
+  // },
 
   alias:{
     // '@': resolve(__dirname, '/'), //автоподстановка root url
